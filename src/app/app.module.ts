@@ -1,3 +1,7 @@
+import { GlobalErrorHandler } from './globalErrorHandler';
+import { ErrorHandler } from '@angular/core';
+import { CalendarModule } from './calendar/calendar.module';
+import { TasksModule } from './tasks/tasks.module';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
@@ -10,8 +14,11 @@ import { AppComponent } from './app.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    TasksModule,
+    CalendarModule
   ],
+  // providers: [{provide: ErrorHandler, useClass: GlobalErrorHandler}],
   providers: [],
   bootstrap: [AppComponent]
 })
